@@ -95,8 +95,22 @@ const App = () => {
   )
 
   return (
-    <h1>Hello world!</h1>
-  );
+    <>
+      <h1>Zombie Fighters</h1>
+      <h2>Money: ${money}</h2>
+      <ul>
+        {zombieFighters.map(fighter => (
+          <li key={fighter.id}>
+            <img src={fighter.img} alt={fighter.name} width="100" />
+            <h3>{fighter.name}</h3>
+            <p>Price: ${fighter.price}</p>
+            <p>Strength: {fighter.strength}</p>
+            <p>Agility: {fighter.agility}</p>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
 }
 
 export default App
